@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108084029) do
+ActiveRecord::Schema.define(version: 20180108085245) do
 
   create_table "lists", force: :cascade do |t|
     t.string "title", limit: 32, null: false
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20180108084029) do
     t.boolean "completion", default: false
     t.boolean "star", default: false
     t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
